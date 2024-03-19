@@ -72,8 +72,8 @@ function App() {
   const param = new URLSearchParams(window.location.search);
 
   const [grade, setGrade] = useState(param.get('grade') || '3');
-  const [name, setName] = useState(param.get('name') || '황준혁');
-  const [studentId, setStudentId] = useState(param.get('id') || 'C011213');
+  const [name, setName] = useState(param.get('name') || '이름');
+  const [studentId, setStudentId] = useState(param.get('id') || '학번');
   const [second, setSecond] = useState(30);
   const [qrImageIndex, setQrImageIndex] = useState(false);
   const [modalOpened, setModalOpened] = useState(false);
