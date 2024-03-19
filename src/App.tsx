@@ -69,9 +69,11 @@ const styles: { [key: string]: CSSProperties } = {
 };
 
 function App() {
-  const [grade, setGrade] = useState('3');
-  const [name, setName] = useState('황준혁');
-  const [studentId, setStudentId] = useState('C011213');
+  const param = new URLSearchParams(window.location.search);
+
+  const [grade, setGrade] = useState(param.get('grade') || '3');
+  const [name, setName] = useState(param.get('name') || '황준혁');
+  const [studentId, setStudentId] = useState(param.get('id') || 'C011213');
   const [second, setSecond] = useState(30);
   const [qrImageIndex, setQrImageIndex] = useState(false);
   const [modalOpened, setModalOpened] = useState(false);
