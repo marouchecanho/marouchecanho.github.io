@@ -1,4 +1,4 @@
-import { CSSProperties, useState } from 'react';
+import { CSSProperties, useEffect, useState } from 'react';
 import { useInterval } from 'usehooks-ts';
 
 const styles: { [key: string]: CSSProperties } = {
@@ -72,11 +72,23 @@ function App() {
   const param = new URLSearchParams(window.location.search);
 
   const [grade, setGrade] = useState(param.get('grade') || '3');
-  const [name, setName] = useState(param.get('name') || '이름');
-  const [studentId, setStudentId] = useState(param.get('id') || '학번');
+  const [name, setName] = useState(
+    param.get('name') || window.localStorage.getItem('name') || '이름'
+  );
+  const [studentId, setStudentId] = useState(
+    param.get('id') || window.localStorage.getItem('sid') || '학번'
+  );
   const [second, setSecond] = useState(30);
   const [qrImageIndex, setQrImageIndex] = useState(false);
   const [modalOpened, setModalOpened] = useState(false);
+
+  useEffect(() => {
+    window.localStorage.setItem('name', name);
+  }, [name]);
+
+  useEffect(() => {
+    window.localStorage.setItem('sid', studentId);
+  }, [studentId]);
 
   const refreshQr = () => {
     setQrImageIndex(!qrImageIndex);
