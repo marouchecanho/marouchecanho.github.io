@@ -1,10 +1,12 @@
+
+
 #root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial,sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: rgba(0, 0, 0);
 
   width: 100%;
 
@@ -26,6 +28,7 @@ body {
   flex-direction: column;
   min-width: 320px;
   /* min-height: 100vh; */
-  background: rgb(3, 74, 159);
-  background: linear-gradient(140deg, #064a9f 4%, #1075b7 45%, #1f9cce 100%);
+  background:#f2f2f2;
+  background-color:'white';
+
 }
